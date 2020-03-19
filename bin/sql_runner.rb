@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SQLRunner
   def initialize(db)
     @db = db
@@ -9,6 +11,6 @@ class SQLRunner
   end
 
   def execute_sql(sql)
-     sql.scan(/[^;]*;/m).each { |line| @db.execute(line) } unless sql.empty?
+    sql.scan(/[^;]*;/m).each { |line| @db.execute(line) } unless sql.empty?
   end
 end
